@@ -12,6 +12,7 @@ public class GenomeAnalyzer {
     protected String buffer;
 
     protected String getBuffer() {
+        System.out.println("Getting buffer...");
         return buffer;
     }
 

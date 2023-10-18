@@ -39,7 +39,7 @@ public class GastroDiseaseDetector implements PatternDetector{
         // Print out the detected pattern
         // GTTTTTTG  GTG
 
-        return sb.toString() + " is detected at pos: " + idx;
+        return sb.toString() + " is detected at pos " + idx;
     }
 
 }
