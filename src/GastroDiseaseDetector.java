@@ -11,7 +11,6 @@ public class GastroDiseaseDetector implements PatternDetector{
                 isStart = true;
             }else if(letter == 'T' && isStart){
                 sb.append('T');
-                continue;
             }else if(letter == 'G' && isStart){
                 sb.append("G");
                 if(sb.length()>=3){
@@ -20,13 +19,16 @@ public class GastroDiseaseDetector implements PatternDetector{
                     sb = new StringBuilder("G");
                     idx = i;
                 }
-            }else{
+            }else if(letter == 'T' && !isStart){
+                // Do nothing
+            }
+            else{
                 sb = new StringBuilder("G");
                 idx = -1;
                 isStart = false;
             }
         }
-        return idx;
+        return -1;
     }
 
     @Override
