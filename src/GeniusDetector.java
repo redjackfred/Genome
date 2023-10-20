@@ -14,6 +14,6 @@ public class GeniusDetector implements PatternDetector{
 
     @Override
     public String additionalInfo() {
-        return "GAGA is detected at pos " + this.idx;
+        return this.idx!=-1 ? "GAGA is detected at pos " + this.idx : "";
     }
 }

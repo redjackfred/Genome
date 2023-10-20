@@ -35,7 +35,8 @@ public class RepeaterDetector implements PatternDetector{
                 return idx;
             }
         }
-        return idx;
+        if(!isRepeat) this.idx = -1;
+        return this.idx;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class RepeaterDetector implements PatternDetector{
 
     @Override
     public String additionalInfo() {
-        return this.sb.toString() + " is detected at pos " + this.idx;
+        return this.idx!=-1 ? this.sb.toString() + " is detected at pos " + this.idx : "";
     }
 
     public void findSimpleSequence(){
