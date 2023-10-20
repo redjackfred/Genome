@@ -28,6 +28,7 @@ public class GastroDiseaseDetector implements PatternDetector{
                 isStart = false;
             }
         }
+        sb = new StringBuilder();
         return -1;
     }
 
@@ -41,7 +42,7 @@ public class GastroDiseaseDetector implements PatternDetector{
         // Print out the detected pattern
         // GTTTTTTG  GTG
 
-        return sb.toString() + " is detected at pos " + idx;
+        return sb.isEmpty()? "" : sb.toString() + " is detected at pos " + idx;
     }
 
 }
