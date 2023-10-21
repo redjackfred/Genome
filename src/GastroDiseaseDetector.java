@@ -1,5 +1,5 @@
 public class GastroDiseaseDetector implements PatternDetector{
-    private StringBuilder sb = new StringBuilder("G");
+    private StringBuilder sb;
     int idx = -1;
     @Override
     public int detect(GenomeAnalyzer analyzer) {
@@ -7,6 +7,7 @@ public class GastroDiseaseDetector implements PatternDetector{
         for(int i=0;i<analyzer.buffer.length();i++){
             char letter = analyzer.buffer.charAt(i);
             if(letter == 'G' && !isStart){
+                sb = new StringBuilder("G");
                 idx = i;
                 isStart = true;
             }else if(letter == 'T' && isStart){
@@ -23,7 +24,6 @@ public class GastroDiseaseDetector implements PatternDetector{
                 // Do nothing
             }
             else{
-                sb = new StringBuilder("G");
                 idx = -1;
                 isStart = false;
             }
